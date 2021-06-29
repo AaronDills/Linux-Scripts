@@ -1,0 +1,12 @@
+[Unit]
+Description=Dynamic DNS for domain systems
+After=network.target
+
+[Service]
+Type=simple
+ExecStartPre=/usr/share/ensure-ticket.sh
+ExecStart=-/usr/share/update-dns.sh
+RestartSec=3600
+Restart=always
+[Install]
+WantedBy=multi-user.target
