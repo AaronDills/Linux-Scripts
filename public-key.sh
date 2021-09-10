@@ -15,7 +15,7 @@ fi
 
 REALM="REALM"
 dc_values="dc=realm,dc=com"
-attribute="altSecurityIdentities"
+attribute="publicKeyAttribute"
 server=$(dig +noall +noauthority +answer SRV "_gc._tcp.${REALM}" | sed -re "s|.* ([^ ]*[^. ]).*|\1|"| head -n 1)
 username=$(sed -n '1p' /etc/.creds.fs.homes | cut -d '=' -f2)
 password=$(sed -n '2p' /etc/.creds.fs.homes | cut -d '=' -f2)
